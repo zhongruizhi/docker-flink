@@ -1,9 +1,9 @@
-FROM bde2020/hadoop-base:2.0.0-hadoop3.2.1-java8
+FROM ruizhizhong058/hadoop-base:3.3.6-java8
 
-LABEL MAINTAINER="Gezim Sejdiu <g.sejdiu@gmail.com>"
+LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@zoom.us>"
 
-ENV FLINK_VERSION=1.14.5
-ENV HADOOP_VERSION=32
+ENV FLINK_VERSION=1.18.1
+ENV HADOOP_VERSION=33
 ENV SCALA_VERSION=2.12
 
 #Enable poc-init-daemon
@@ -21,7 +21,7 @@ RUN   apt-get update \
       && apt-get install dnsutils -y  \
       && apt-get -y install openssh-client \
       && chmod +x *.sh \
-      && curl -fSL https://archive.apache.org/dist/flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz -o flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz\
+      && curl -fSL -k https://dlcdn.apache.org/flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz -o flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz\
       && tar -xvzf flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz \
       && rm flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz \
       && mv flink-${FLINK_VERSION} /usr/local/flink

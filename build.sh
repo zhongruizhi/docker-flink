@@ -2,11 +2,11 @@
 
 set -e
 
-TAG=1.14.5-hadoop3.2
+TAG=1.18.1-hadoop3.3
 
 build() {
     NAME=$1
-    IMAGE=bde2020/flink-$NAME:$TAG
+    IMAGE=ruizhizhong058/flink-$NAME:$TAG
     cd $([ -z "$2" ] && echo "./$NAME" || echo "$2")
     echo '--------------------------' building $IMAGE in $(pwd)
     docker build -t $IMAGE .

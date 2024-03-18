@@ -1,6 +1,6 @@
-FROM bde2020/flink-base:1.14.5-hadoop3.2
+FROM ruizhizhong058/flink-base:1.18.1-hadoop3.3
 
-LABEL MAINTAINER="Gezim Sejdiu <g.sejdiu@gmail.com>"
+LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@zoom.us>"
 
 ADD worker.sh /
 
