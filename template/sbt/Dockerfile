@@ -5,14 +5,14 @@ LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@zoom.us>"
 ENV FLINK_APPLICATION_JAR_NAME application-1.0
 
 # SBT & Scala
-ENV SCALA_VERSION=2.12.13
-ENV SBT_VERSION=1.5.5
+ENV SCALA_VERSION=2.12.19
+ENV SBT_VERSION=1.9.9
 
 
 COPY template.sh /
 
 RUN apt-get update \
-      && curl -fsL http://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C / \
+      && curl -fsL -k http://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C / \
       && echo >> /.bashrc \
       && echo 'export PATH=~/scala-$SCALA_VERSION/bin:$PATH' >> /.bashrc \
       && curl -L -o sbt-$SBT_VERSION.deb "https://scala.jfrog.io/ui/api/v1/download?repoKey=debian&path=sbt-$SBT_VERSION.deb" \
