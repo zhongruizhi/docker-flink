@@ -17,9 +17,9 @@ RUN apt-get update \
       && tar xfz /tmp/scala-$SCALA_VERSION.tgz -C / \
       && echo >> /.bashrc \
       && echo 'export PATH=~/scala-$SCALA_VERSION/bin:$PATH' >> /.bashrc \
-      && curl -L -o -k sbt-$SBT_VERSION.deb "https://scala.jfrog.io/ui/api/v1/download?repoKey=debian&path=sbt-$SBT_VERSION.deb" \
-      && dpkg -i sbt-$SBT_VERSION.deb \
-      && rm sbt-$SBT_VERSION.deb \
+      && curl -fSL -k "https://scala.jfrog.io/ui/api/v1/download?repoKey=debian&path=sbt-$SBT_VERSION.deb&jfLoader=true" -o /tmp/sbt-$SBT_VERSION.deb\
+      && dpkg -i /tmp/sbt-$SBT_VERSION.deb \
+      && rm /tmp/sbt-$SBT_VERSION.deb \
       && apt-get update \
       && apt-get install -y sbt \
       && apt-get clean \
