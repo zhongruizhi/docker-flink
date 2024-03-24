@@ -1,6 +1,6 @@
-FROM ruizhizhong058/flink-submit:1.18.1-hadoop3.3
+FROM zhongruizhi/flink-submit:1.18.1-hadoop3.3-amd64
 
-LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@zoom.us>"
+LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@outlook.com>"
 
 ENV FLINK_APPLICATION_JAR_NAME application-1.0
 

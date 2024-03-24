@@ -1,6 +1,6 @@
-FROM ruizhizhong058/flink-base:1.18.1-hadoop3.3
+FROM zhongruizhi/flink-base:1.18.1-hadoop3.3-amd64
 
-LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@zoom.us>"
+LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@outlook.com>"
 
 ENV FLINK_APPLICATION_JAR_NAME application-1.0
 ENV FLINK_APPLICATION_JAR_LOCATION /app/application.jar
