@@ -1,6 +1,6 @@
-FROM ruizhizhong058/hadoop-base:3.3.6-java8
+FROM zhongruizhi/hadoop-base:3.3.6-java8-aarch64
 
-LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@zoom.us>"
+LABEL MAINTAINER="Ruizhi Zhong <ruizhi.zhong@outlook.com>"
 
 ENV FLINK_VERSION=1.18.1
 ENV HADOOP_VERSION=33
